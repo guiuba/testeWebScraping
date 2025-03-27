@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jsoup:jsoup:1.15.3' // Para Web Scraping
+    implementation 'commons-io:commons-io:2.11.0' // Para manipulação de arquivos
+    implementation 'org.apache.commons:commons-compress:1.21' // Para compactação ZIP
+}
+
+application {
+    mainClass = 'WebScrapingZip'
+}
+
+task fatJar(type: Jar) {
+    archiveBaseName.set('webscraper')
+    archiveVersion.set('1.0')
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes 'Main-Class': 'WebScrapingZip'
+    }
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}

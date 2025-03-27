@@ -51,5 +51,14 @@ Este código em Java executa as seguintes tarefas:
 
 ---
 
+# Geração e Execução do Executável `.jar`
+
+## Gerar o Executável:
+Para criar o arquivo `.jar` com todas as dependências, execute o seguinte comando:
+
+```sh
+./gradlew fatJar
+
+
 
 

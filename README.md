@@ -53,11 +53,27 @@ Este código em Java executa as seguintes tarefas:
 
 # Geração e Execução do Executável `.jar`
 
-## Gerar o Executável:
-Para criar o arquivo `.jar` com todas as dependências, execute o seguinte comando:
+## Como gerar o executável:
+Para criar o arquivo `.jar` com todas as dependências, execute o comando abaixo:
 
 ```sh
 ./gradlew fatJar
+```
+
+## Isso criará o arquivo webscraper-1.0.jar na pasta build/libs.
+
+## Como executar o programa:
+Para rodar o programa, utilize o seguinte comando:
+```sh
+java -jar build/libs/webscraper-1.0.jar
+```
+
+## O que o programa fará:
+Realizará o web scraping.
+
+Fará o download dos PDFs.
+
+Criará um arquivo ZIP contendo os anexos.
 
 
 
